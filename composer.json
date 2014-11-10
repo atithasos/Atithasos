@@ -1,0 +1,17 @@
+{
+    "name": "magicalex/seedbox-manager",
+    "description": "Web app for manage your seedbox",
+    "require": {
+        "php": ">=5.4.0",
+        "twig/twig": "1.*"
+    },
+    "authors": [
+        {
+            "name": "Magicalex",
+            "email": "magicalex14000@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "app\\": "app" }
+    }
+}
