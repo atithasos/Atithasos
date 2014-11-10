@@ -2,7 +2,7 @@
 
 void supprLock (char nickname[])
 {
-    //Déclarations
+    //Declarations
     char chaine [100] = {0};
 
     snprintf(chaine, 100, "rm /home/%s/.session/rtorrent.lock\n", nickname);
