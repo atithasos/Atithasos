@@ -1,12 +1,12 @@
 {% if support.ReadTicket == false or support.ReadTicket.allTicketClose == true %}
     <form method="post" action="index.php">
-        <h6 class="page-header reply-ticket-h6"><strong>Ouvrir un ticket</strong></h6>
+        <h6 class="page-header reply-ticket-h6"><strong>Ανοίχτε ticket</strong></h6>
         <div class="form-group">
             <textarea class="form-control" name="message" rows="3"></textarea>
         </div>
         <p class="text-right">
             <input type="hidden" name="user" value="{{ userName }}">
-            <input type="submit" name="support" value="Envoyer un Ticket" class="btn btn-info btn-xs">                            
+            <input type="submit" name="support" value="Αποστολή Ticket" class="btn btn-info btn-xs">                            
         </p>
     </form>
 {% endif %}
@@ -16,10 +16,10 @@
         <div class="panel panel-default ticket ticket-{{ loop.index }}">
         {% for ticket in list.reply %}
             <div class="panel-heading">
-            Message de : <em>{{ ticket.data.user }}</em> le <em>{{ ticket.data.date }}</em>
+            Μήνυμα  : <em>{{ ticket.data.user }}</em> στις <em>{{ ticket.data.date }}</em>
             {% if loop.first %}
                 <span class="text-right">
-                    <button type="button" id="{{ idTicket }}" class="btn btn-link btn-xs close-ticket">Cacher</button>
+                    <button type="button" id="{{ idTicket }}" class="btn btn-link btn-xs close-ticket">Απόκρυψη</button>
                 </span>
             {% endif %}
             </div>
@@ -28,13 +28,13 @@
         </div>
         {% if list.status == 'open' %}
             <form method="post" action="index.php" class="ticket ticket-{{ loop.index }}">
-                <h6 class="page-header reply-ticket-h6"><strong>Répondre au ticket</strong></h6>
+                <h6 class="page-header reply-ticket-h6"><strong>Απάντηση ticket</strong></h6>
                 <div class="form-group">
                     <textarea class="form-control" name="message" rows="3"></textarea>
                 </div>
                 <p class="text-right">
                     <input type="hidden" name="user" value="{{ userName }}">
-                    <input type="submit" name="support" value="Envoyer un Ticket" class="btn btn-info btn-xs">                            
+                    <input type="submit" name="support" value="Αποστολή του Ticket" class="btn btn-info btn-xs">                            
                 </p>
             </form>
         {% endif %}
@@ -56,9 +56,9 @@
                     <td><button type="button" class="btn btn-link btn-xs show-ticket" id="{{ loop.index }}">{{ loop.index }}</button></td>
                     <td>
                     {% if list.status == 'open' %}
-                        <strong class="text-success"><small>Ouvert</small></strong>
+                        <strong class="text-success"><small>Ανοιχτό</small></strong>
                     {% else %}
-                        <strong class="text-danger"><small>Fermé</small></strong>
+                        <strong class="text-danger"><small>Κλειστό</small></strong>
                     {% endif %}
                     </td>
                     {% for infoDate in list.reply %}
@@ -73,10 +73,10 @@
                     {% if list.status == 'open' %}
                         <form method="post" action="index.php">
                             <input type="hidden" name="user" value="{{ userName }}" class="btn btn-info">
-                            <input type="submit" name="cloture" value="Fermer le billet" class="btn btn-info btn-xs">
+                            <input type="submit" name="cloture" value="Κλείσιμο του ticket" class="btn btn-info btn-xs">
                         </form>
                     {% else %}
-                        <button class="btn btn-info btn-xs disabled">Fermer le billet</button>
+                        <button class="btn btn-info btn-xs disabled">Κλείσιμο του ticket</button>
                     {% endif %}
                     </td>
                 </tr>
