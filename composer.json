@@ -1,5 +1,5 @@
 {
-    "name": "magicalex/seedbox-manager",
+    "name": "Atithasos/Atithasos",
     "description": "Web app for manage your seedbox",
     "require": {
         "php": ">=5.4.0",
@@ -7,8 +7,8 @@
     },
     "authors": [
         {
-            "name": "Magicalex",
-            "email": "magicalex14000@gmail.com"
+            "name": "Atithasos",
+            "email": "atithasos@gmail.com"
         }
     ],
     "autoload": {
