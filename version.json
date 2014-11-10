@@ -1,9 +1,8 @@
 {
-  "name": "seedbox-manager",
-  "version": "2.4.2",
-  "contributors": "Magicalex, Hydrog3n",
+  "name": "Atithasos",
+  "version": "1.0.1",
+  "contributors": "Atithasos",
   "news": [
-    "Correction du bug à la déconnexion.",
-    "Mise à jour vers la version 3.2 de bootstrap."
+    "Anew version from me in Greek Language"
   ]
 }
