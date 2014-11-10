@@ -19,10 +19,10 @@ class Server extends Users
 
         $result = '';
         if ($time['days'] != 0)
-            $result = $time['days'] . ' jours ';
+            $result = $time['days'] . ' Μέρες ';
         if ($time['hours'] != 0)
-            $result .= $time['hours'] . ' h ';
-        $result .= $time['min'] . ' min';
+            $result .= $time['hours'] . ' Ώρες ';
+        $result .= $time['min'] . ' λεπτά';
 
         return $result;
     }
@@ -35,11 +35,11 @@ class Server extends Users
             $load_average[$i] = round($load_average[$i], 2);
 
         if ($load_average[0] < 5)
-            $info_charge = '<em class="text-success">Charge faible, conditions optimales.</em>';
+            $info_charge = '<em class="text-success">Χαμηλό φορτίο, ιδανικές συνθήκες.</em>';
         elseif ($load_average[0] < 10)
-            $info_charge = '<em class="text-warning">Charge élévée, risque de ralentissement sur le serveur.</em>';
+            $info_charge = '<em class="text-warning">Υψηλό φορτίο, κίνδυνος επιβράδυνσης στο διακομιστή.</em>';
         else
-            $info_charge = '<em class="text-danger">Charge très élévée, risque de gros ralentissement sur le serveur.</em>';
+            $info_charge = '<em class="text-danger">Πολύ υψηλό φορτίο, κίνδυνο από μεγάλες επιβραδύνσεις στο διακομιστή.</em>';
 
         return array( 'load_average' => $load_average,
                       'info_charge' => $info_charge );
@@ -75,10 +75,10 @@ class Server extends Users
     {
         $lifetime_cookie = time() + 3600*24;
 
-        if (!isset($_COOKIE['seedbox-manager']) && $this->is_owner === true)
+        if (!isset($_COOKIE['Atithasos']) && $this->is_owner === true)
         {
             setcookie('seedbox-manager', 'check-update', $lifetime_cookie, '/', null, false, true);
-            $url_repository = 'https://raw.githubusercontent.com/Magicalex/seedbox-manager/master/version.json';
+            $url_repository = 'https://raw.githubusercontent.com/Atithasos/Atithasos/master/version.json';
             $local = json_decode(file_get_contents('./../version.json'));
             $remote = json_decode(file_get_contents($url_repository));
             if ( $local->version != $remote->version )
