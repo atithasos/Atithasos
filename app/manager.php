@@ -3,7 +3,7 @@
 if ( isset($_SERVER['REMOTE_USER']) || isset($_SERVER['PHP_AUTH_USER']) )
     $userName = isset($_SERVER['REMOTE_USER']) ? $_SERVER['REMOTE_USER']:$_SERVER['PHP_AUTH_USER'];
 else
-    die('Le script n\'est pas prot&eacute;g&eacute; par une authentification.<br>V&eacute;rifiez la configuration de votre serveur web.');
+    die('The script is not protected with an authentification.<br>Please check your web server configuration.');
 
 // autoload des class php via composer
 require_once './../vendor/autoload.php';
