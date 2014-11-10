@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# script pour compiler le programme c reboot-rtorrent
-# Auteur du programme c : backtoback
+# script for compiler the program c reboot-rtorrent
+# Writter Atithasos
 
 gcc -v *.c -o reboot-rtorrent
 chown -c root:root reboot-rtorrent
