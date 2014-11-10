@@ -45,7 +45,7 @@ class Users
 
     private static function convertFileSize($octets)
     {
-        $unit = array('O','Ko','Mo','Go','To','Po','Eo');
+        $unit = array('O','Kb','MB','GB','TB','PB','EB');
         for ($i=0; $octets >= 1024; $i++) {
             $octets = $octets / 1024;
         }
@@ -133,17 +133,17 @@ class Users
             {
                 $delete_file_log = @unlink($path_conf_user.'/'.$file_name);
                 if ($delete_file_log === true)
-                    $log[] = 'Le fichier '.$file_name.' a été supprimé.';
+                    $log[] = 'File '.$file_name.' has been removed.';
                 else
-                    $error[] = 'Impossible de supprimer le fichier '.$file_name.'.';
+                    $error[] = 'Can not delete file '.$file_name.'.';
             }
         }
 
         $delete_folder_log = @rmdir($path_conf_user);
         if ($delete_folder_log === true)
-            $log[] = 'Le dossier '.$path_conf_user.'/ a été supprimé.';
+            $log[] = 'File '.$path_conf_user.'/ has been removed.';
         else
-            $error[] = 'Impossible de supprimer le dossier '.$path_conf_user.'.';
+            $error[] = 'Can not delete file '.$path_conf_user.'.';
 
         return array( 'log' => @$log, 'error' => @$error);
     }
