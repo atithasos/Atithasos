@@ -40,7 +40,7 @@ class Install
     public static function create_new_user($userName)
     {
         $log = mkdir('./../conf/users/'.$userName ,0755 ,false);
-        if ($log === true) $log = 'Dossier de confifuration crée avec succès';
+        if ($log === true) $log = 'Configuration file created successfully';
 
         if (file_exists('./../conf/users/'.$userName))
             copy('./../conf/config.ini' ,'./../conf/users/'.$userName.'/config.ini');
