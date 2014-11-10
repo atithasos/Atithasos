@@ -8,7 +8,7 @@ chmod +s nom_du_fichier
 
 int main (int argc, char* argv[])
 {
-    ///Déclarations
+    ///Declarations
     char nickname[50]; //Chaine recevant le pseudo de l'utilisateur
 
     // setuid pour les droits root
@@ -18,13 +18,13 @@ int main (int argc, char* argv[])
     //Récupération du pseudo de l'utilisateur
     strcpy (nickname, argv[1]); //On récupère le pseudo
 
-    //Arret de rtorrent
+    //Stop rtorrent
     rtorrent_kill(nickname);
     
-    //Arret de screen
+    //Stop screen
     screen_kill(nickname);
 
-    //Suppression du rtorrent.lock
+    //Suppression rtorrent.lock
     supprLock (nickname);
 
     //Appel de la fonction pour reboot rtorrent
