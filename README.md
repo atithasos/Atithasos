@@ -20,7 +20,7 @@ note : pour installer l'interface il faut les droits root ou avoir la possiblit√
 
 ```
 cd /var/www
-git clone https://github.com/Magicalex/seedbox-manager.git
+git clone https://github.com/Atithasos/Atithasos.git
 chown -R www-data:www-data ./seedbox-manager/
 cd ./seedbox-manager/
 composer install
